@@ -1,0 +1,75 @@
+body.instagram-page {
+  --color-bg: #000000;
+  --color-surface: #121212;
+  --color-text: #f5f5f5;
+  --color-text-muted: #a8a8a8;
+  --color-border: #262626;
+  --color-primary: #0095f6;
+  --color-primary-dark: #1877f2;
+  --shadow-soft: none;
+  --shadow-hover: none;
+  max-width: none;
+}
+
+.insta-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.insta-topbar_inner {
+  max-width: 975px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.insta-topbar_logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}
+
+.insta-topbar_actions {
+  display: flex;
+  gap: 18px;
+}
+
+.insta-topbar_icon {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 4px;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.main {
+  padding: 24px 0 40px;
+}
+
+.insta-footer {
+  padding: 24px;
+  text-align: center;
+}
+
+.insta-footer_text {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+body.instagram-page.theme-light {
+  --color-bg: #fafafa;
+  --color-surface: #ffffff;
+  --color-text: #262626;
+  --color-text-muted: #8e8e8e;
+  --color-border: #dbdbdb;
+}

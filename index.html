@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tilin.gato | Instagram</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body class="instagram-page">
+    <div class="insta-topbar">
+      <div class="insta-topbar_inner">
+        <span class="insta-topbar_logo">Instagram</span>
+        <div class="insta-topbar_actions">
+          <button class="insta-topbar_icon" type="button" aria-label="Inicio">
+            🏠
+          </button>
+          <button
+            class="insta-topbar_icon"
+            type="button"
+            aria-label="Notificaciones"
+          >
+            ❤️
+          </button>
+          <button class="insta-topbar_icon" type="button" aria-label="Mensajes">
+            ✉️
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <main class="main">
+      <section class="profile">
+        <div class="profile_container">
+          <div class="profile_avatar_ring">
+            <img
+              src="./images/pp_cat.jpg"
+              alt="Foto de perfil de tilin.gato"
+              class="profile_avatar"
+            />
+          </div>
+          <div class="profile_info">
+            <div class="profile_top">
+              <h2 class="profile_username">
+                tilin.gato
+                <svg
+                  class="profile_verified"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12 2 14.5 4.5 18 4l0.5 3.5L22 9l-1.5 3 1.5 3-3.5 1.5L18 20l-3.5-.5L12 22l-2.5-2.5L6 20l-.5-3.5L2 15l1.5-3L2 9l3.5-1.5L6 4l3.5.5L12 2Z"
+                  />
+                  <path
+                    fill="var(--color-surface)"
+                    d="m9.5 12.5 2 2 4-4.5"
+                    stroke="var(--color-surface)"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="none"
+                  />
+                </svg>
+              </h2>
+              <div class="profile_actions">
+                <button class="profile_edit_button">Editar perfil</button>
+                <button class="profile_archive_button" type="button">
+                  Ver archivo
+                </button>
+                <button
+                  class="profile_settings_button"
+                  aria-label="Configuración"
+                  type="button"
+                >
+                  ⚙️
+                </button>
+              </div>
+            </div>
+            <ul class="profile_stats">
+              <li>
+                <strong class="profile_stats_posts">0</strong> publicaciones
+              </li>
+              <li>
+                <strong class="profile_stats_followers">248</strong> seguidores
+              </li>
+              <li>
+                <strong class="profile_stats_following">180</strong> seguidos
+              </li>
+            </ul>
+            <p class="profile_bio">
+              🐱 Gato atigrado naranja &middot; 3 años<br />
+              Amante de las siestas y el atún 🐟
+            </p>
+          </div>
+        </div>
+
+        <div class="profile_highlights">
+          <div class="highlight_item">
+            <div class="highlight_circle">
+              <img src="./images/pp_cat.jpg" alt="Destacado: Siestas" />
+            </div>
+            <span class="highlight_label">Siestas</span>
+          </div>
+          <div class="highlight_item">
+            <div class="highlight_circle">
+              <img src="./images/consultageneral.jpg" alt="Destacado: Vet" />
+            </div>
+            <span class="highlight_label">Vet</span>
+          </div>
+          <div class="highlight_item">
+            <div class="highlight_circle">
+              <img src="./images/bañomascota.jpg" alt="Destacado: Spa" />
+            </div>
+            <span class="highlight_label">Spa</span>
+          </div>
+          <div class="highlight_item highlight_item--new">
+            <div class="highlight_circle highlight_circle--new">+</div>
+            <span class="highlight_label">Nuevo</span>
+          </div>
+        </div>
+
+        <!-- Popup 1: editar perfil -->
+        <div class="popup" id="popup-edit">
+          <div class="popup_container">
+            <div class="popup_tittle">Editar perfil</div>
+            <button class="popup_close">X</button>
+            <div class="popup_content">
+              <form action="#" class="form" id="edit-profile-form">
+                <label for="edit-username">Nombre de usuario</label>
+                <input
+                  type="text"
+                  class="form_name"
+                  name="username"
+                  id="edit-username"
+                />
+                <label for="edit-bio">Biografía</label>
+                <input
+                  type="text"
+                  class="form_description"
+                  name="bio"
+                  id="edit-bio"
+                />
+                <button type="submit" class="form_button">
+                  Guardar cambios
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Popup 2: configuración -->
+        <div class="popup-agenda" id="popup-settings">
+          <div class="popup-agenda_container">
+            <div class="popup-agenda_title">Configuración</div>
+            <button class="popup-agenda_close">X</button>
+            <div class="popup-agenda_content">
+              <form action="#" class="form form-settings" id="settings-form">
+                <label class="settings_option">
+                  <span>Cuenta privada</span>
+                  <input
+                    type="checkbox"
+                    class="settings_input"
+                    name="cuenta-privada"
+                    value="Cuenta privada"
+                  />
+                </label>
+                <label class="settings_option">
+                  <span>Notificaciones activas</span>
+                  <input
+                    type="checkbox"
+                    class="settings_input"
+                    name="notificaciones"
+                    value="Notificaciones activas"
+                    checked
+                  />
+                </label>
+                <label class="settings_option">
+                  <span>Tema claro</span>
+                  <input
+                    type="checkbox"
+                    class="settings_input"
+                    id="settings-theme"
+                    name="tema-claro"
+                    value="Tema claro"
+                  />
+                </label>
+                <label class="settings_option">
+                  <span>Mostrar estado de actividad</span>
+                  <input
+                    type="checkbox"
+                    class="settings_input"
+                    name="mostrar-actividad"
+                    value="Mostrar actividad"
+                    checked
+                  />
+                </label>
+                <button type="submit" class="form_button">
+                  Guardar preferencias
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Popup 3: confirmación -->
+        <div class="popup" id="popup-confirm">
+          <div class="popup_container">
+            <div class="popup_tittle">¡Listo!</div>
+            <button class="popup_close">X</button>
+            <div class="popup_content">
+              <p class="popup-confirm_message"></p>
+              <button class="form_button popup-confirm_accept">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cards">
+        <div class="profile_tabs">
+          <button class="profile_tab profile_tab--active" type="button">
+            <span class="profile_tab_icon">▦</span> Publicaciones
+          </button>
+          <button class="profile_tab" type="button">
+            <span class="profile_tab_icon">🔖</span> Guardado
+          </button>
+          <button class="profile_tab" type="button">
+            <span class="profile_tab_icon">🏷️</span> Etiquetas
+          </button>
+        </div>
+        <div class="card_container"></div>
+      </section>
+    </main>
+
+    <footer class="insta-footer">
+      <p class="insta-footer_text">&copy; 2026 tilin.gato</p>
+    </footer>
+
+    <template id="card-template">
+      <div class="card">
+        <img class="card_image" src="" alt="" />
+        <div class="card_overlay">
+          <span class="card_overlay_likes"></span>
+          <span class="card_overlay_comments"></span>
+        </div>
+        <div class="card_heart">❤️</div>
+        <button class="card_like_button" type="button" aria-label="Me gusta">
+          🤍
+        </button>
+      </div>
+    </template>
+    <script type="module" src="./scripts/script.js"></script>
+  </body>
+</html>

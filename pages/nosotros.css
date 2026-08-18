@@ -1,0 +1,10 @@
+@import url(../blocks/base/variables.css);
+@import url(../blocks/components/header.css);
+@import url(../blocks/components/nav.css);
+@import url(../blocks/components/page-hero.css);
+@import url(../blocks/components/footer.css);
+@import url(../blocks/sections/nosotros.css);
+
+.main {
+  padding: 0;
+}
