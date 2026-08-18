@@ -48,8 +48,8 @@ data.forEach((item) => {
   const cardOverlayLikes = card.querySelector(".card_overlay_likes");
   const cardOverlayComments = card.querySelector(".card_overlay_comments");
 
-  cardOverlayLikes.textContent = `❤️ ${item.likes}`;
-  cardOverlayComments.textContent = `💬 ${item.comments}`;
+  cardOverlayLikes.textContent = item.likes;
+  cardOverlayComments.textContent = item.comments;
 
   cardImage.src = item.link;
   cardImage.alt = item.title;
@@ -57,7 +57,6 @@ data.forEach((item) => {
   cardImage.addEventListener("dblclick", () => {
     const cardEl = cardImage.closest(".card");
     cardEl.classList.add("card_liked");
-    cardLikeButton.textContent = "❤️";
 
     cardHeart.classList.add("card_heart--visible");
     setTimeout(() => {
@@ -68,7 +67,6 @@ data.forEach((item) => {
   cardLikeButton.addEventListener("click", () => {
     const cardEl = cardLikeButton.closest(".card");
     cardEl.classList.toggle("card_liked");
-    cardLikeButton.textContent = cardEl.classList.contains("card_liked") ? "❤️" : "🤍";
   });
 
   cardContainer.append(card);
@@ -134,3 +132,26 @@ popupConfirmClose.addEventListener("click", () => {
 popupConfirmAccept.addEventListener("click", () => {
   popupConfirm.classList.toggle("popup_open");
 });
+
+// --- Flechas de historias destacadas ---
+const highlightsStrip = document.querySelector("#profile-highlights");
+const highlightsPrev = document.querySelector(".highlights_nav--prev");
+const highlightsNext = document.querySelector(".highlights_nav--next");
+
+const updateHighlightsNav = () => {
+  const maxScroll = highlightsStrip.scrollWidth - highlightsStrip.clientWidth;
+  highlightsPrev.hidden = highlightsStrip.scrollLeft <= 4;
+  highlightsNext.hidden = highlightsStrip.scrollLeft >= maxScroll - 4;
+};
+
+highlightsPrev.addEventListener("click", () => {
+  highlightsStrip.scrollBy({ left: -200, behavior: "smooth" });
+});
+
+highlightsNext.addEventListener("click", () => {
+  highlightsStrip.scrollBy({ left: 200, behavior: "smooth" });
+});
+
+highlightsStrip.addEventListener("scroll", updateHighlightsNav);
+window.addEventListener("resize", updateHighlightsNav);
+updateHighlightsNav();
