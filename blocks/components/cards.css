@@ -1,9 +1,47 @@
 .profile_tabs {
   display: flex;
-  justify-content: center;
-  gap: 64px;
+  align-items: center;
   border-top: 1px solid var(--color-border);
   margin-top: 24px;
+}
+
+.profile_tabs_group {
+  display: flex;
+  gap: 64px;
+  flex: 1;
+  justify-content: center;
+}
+
+.profile_tab {
+  background: none;
+  border: none;
+  border-top: 1px solid transparent;
+  margin-top: -1px;
+  padding: 14px 4px;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.profile_tab--active {
+  color: var(--color-text);
+  border-top-color: var(--color-text);
+}
+
+.profile_tab_action {
+  background: none;
+  border: none;
+  padding: 14px 4px;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.profile_tab_action:hover {
+  color: var(--color-text);
 }
 
 .profile_tab {

@@ -98,3 +98,29 @@
 .settings_option input[type="checkbox"]:checked::before {
   transform: translateX(16px);
 }
+
+/* --- Vista previa de nueva publicación --- */
+.add-post_preview {
+  aspect-ratio: 1 / 1;
+  max-height: 220px;
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+.add-post_preview_placeholder {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 0 16px;
+}
+
+.add-post_preview_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
